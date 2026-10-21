@@ -6,7 +6,7 @@ service cloud.firestore {
     }
     // استبدل القيمة بـ UID الخاص بك من Firebase Authentication.
     function isOwner() {
-      return signedIn() && request.auth.uid == "REPLACE_WITH_OWNER_AUTH_UID";
+      return signedIn() && request.auth.uid == "64NbFsbWbic6ae08KYPpIm9jOfU2";
     }
 
     match /users/{userId} {

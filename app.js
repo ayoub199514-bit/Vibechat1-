@@ -110,7 +110,7 @@ onAuthStateChanged(auth, async (user) => {
   listenMessages();
 });
 
-const ADMIN_UID = "REPLACE_WITH_OWNER_AUTH_UID";
+const ADMIN_UID = "64NbFsbWbic6ae08KYPpIm9jOfU2";
 
 function listenMessages() {
   if (stopMessages) stopMessages();
