@@ -28,3 +28,30 @@ th{background:#1a2540;color:#c7d1e8;font-weight:700;white-space:nowrap}
 tbody tr:hover{background:#ffffff06}
 tbody tr:last-child td{border-bottom:0}
 @media(max-width:640px){.admin-hero{align-items:flex-start;flex-direction:column}.admin-hero .btn{width:100%}.admin-welcome{align-items:flex-start;flex-wrap:wrap}.admin-secure{margin-right:0;width:100%}.admin-stats{grid-template-columns:1fr}.admin-section-title{align-items:flex-start;flex-direction:column}.admin-tag{white-space:normal}}
+
+
+/* اشتراك Binance Pay — واجهة آمنة بانتظار إعداد بوابة الخادم */
+.subscription-card{padding:16px;border:1px solid #8b7cff55;border-radius:17px;background:linear-gradient(145deg,#211d43,#142238);display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.subscription-icon{display:grid;place-items:center;width:34px;height:34px;border-radius:11px;background:#8b7cff25;color:#c4bbff;font-size:19px}
+.subscription-card>strong{font-size:14px}
+.subscription-price{font-size:27px;font-weight:800;color:#fff}
+.subscription-price small{font-size:11px;color:var(--muted);font-weight:500}
+.subscription-card p{font-size:11px;color:var(--muted);margin:0;line-height:1.6}
+.btn-subscription{width:100%;margin-top:4px;background:linear-gradient(135deg,#a99eff,#68e0d3);color:#0b1020;font-size:12px}
+.payment-state{color:#ffd78a;font-size:10px;line-height:1.5}
+.subscription-panel{max-width:760px;margin:0 auto;padding:clamp(18px,4vw,34px);border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,#121a2d,#0e1526)}
+.subscription-top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.subscription-top h2{margin:0 0 8px;font-size:clamp(22px,4vw,30px)}
+.subscription-top .eyebrow{margin-top:0}
+.subscription-offer{max-width:470px;margin:28px auto 4px;padding:26px;border:1px solid #8b7cff55;border-radius:22px;background:linear-gradient(145deg,#1b2440,#121a2d);text-align:center}
+.offer-symbol{width:54px;height:54px;display:grid;place-items:center;margin:0 auto 18px;border-radius:17px;background:#4fd1c51c;color:var(--accent2);font-size:25px;font-weight:800}
+.offer-price{font-size:48px;font-weight:800;line-height:1.2;margin:7px 0 18px}
+.offer-price span{font-size:19px;color:var(--accent2)}
+.offer-divider{height:1px;background:var(--line);margin:20px 0}
+.subscription-offer ul{padding:0 22px 0 0;text-align:right;color:#d8e0f3;font-size:13px;line-height:2.1}
+.payment-not-ready{margin:22px 0 14px;padding:15px;text-align:right;border:1px solid #e8b45a55;border-radius:13px;background:#e8b45a0b}
+.payment-not-ready strong{color:#ffd78a;font-size:13px}
+.payment-not-ready p{font-size:12px;color:var(--muted);line-height:1.8;margin:7px 0 0}
+.subscription-offer>.btn{width:100%;line-height:1.6}
+.subscription-offer>.btn:disabled{opacity:.6;cursor:not-allowed;filter:saturate(.6)}
+@media(max-width:760px){.subscription-top{align-items:flex-start;flex-direction:column}.subscription-top .btn{width:100%}.subscription-offer{padding:20px 16px}.offer-price{font-size:42px}}
