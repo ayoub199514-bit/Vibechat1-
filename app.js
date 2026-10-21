@@ -158,6 +158,17 @@ $("messageForm").addEventListener("submit", async (event) => {
 });
 
 $("logoutBtn").addEventListener("click", async () => { await signOut(auth); });
+$("openSubscription").addEventListener("click", () => {
+  if (!currentUser) return;
+  show(appPanel, false);
+  show(adminPanel, false);
+  show($("subscriptionPanel"), true);
+});
+$("closeSubscription").addEventListener("click", () => {
+  show($("subscriptionPanel"), false);
+  show(appPanel, true);
+});
+
 $("adminBtn").addEventListener("click", async () => {
   if (!currentUser || currentUser.uid !== ADMIN_UID) return;
   show(appPanel, false); show(adminPanel, true);
