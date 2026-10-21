@@ -37,6 +37,14 @@
         <div class="profile-mini"><div id="avatar" class="avatar">V</div><div><strong id="currentName">مستخدم</strong><p id="currentEmail" class="muted small"></p></div></div>
         <div class="side-heading">المحادثات</div>
         <button class="room active" type="button"><span>🌐</span><span><strong>الدردشة العامة</strong><small>تحدث مع الجميع</small></span></button>
+        <div class="subscription-card">
+          <span class="subscription-icon">✦</span>
+          <strong>VibeChat Plus</strong>
+          <div class="subscription-price">5 <small>USDT / شهر</small></div>
+          <p>اشتراك شهري عبر Binance Pay.</p>
+          <button id="openSubscription" class="btn btn-subscription" type="button">تفاصيل الاشتراك</button>
+          <small class="payment-state">الدفع الآمن قيد الإعداد</small>
+        </div>
         <div class="side-note">نصيحة: لا تشارك كلمات المرور أو المعلومات الحساسة في الدردشة العامة.</div>
         <button id="adminBtn" class="btn btn-ghost hidden" type="button">لوحة الإدارة</button>
       </aside>
@@ -50,6 +58,33 @@
         </form>
         <p id="chatError" class="error chat-error" role="alert"></p>
       </section>
+    </section>
+
+    <section id="subscriptionPanel" class="subscription-panel hidden">
+      <div class="subscription-top">
+        <div>
+          <p class="eyebrow">VIBECHAT PLUS</p>
+          <h2>الاشتراك الشهري</h2>
+          <p class="muted">دفع مخطط عبر Binance Pay — 5 USDT شهريًا.</p>
+        </div>
+        <button id="closeSubscription" class="btn btn-ghost" type="button">العودة للدردشة</button>
+      </div>
+      <div class="subscription-offer">
+        <div class="offer-symbol">₮</div>
+        <p class="muted">السعر الشهري</p>
+        <div class="offer-price">5 <span>USDT</span></div>
+        <div class="offer-divider"></div>
+        <ul>
+          <li>الدفع عبر Binance Pay</li>
+          <li>لا يتم تفعيل الاشتراك قبل التحقق من الدفع من الخادم</li>
+          <li>لن نطلب كلمة مرور Binance أو مفاتيح API منك داخل الموقع</li>
+        </ul>
+        <div class="payment-not-ready" role="status">
+          <strong>بوابة الدفع لم تُفعّل بعد</strong>
+          <p>يلزم حساب Binance Pay Merchant وواجهة خادم آمنة لإنشاء طلب الدفع والتحقق من إشعار Binance. لم يتم خصم أي مبلغ ولن يتفعّل أي اشتراك من هذه الصفحة حاليًا.</p>
+        </div>
+        <button id="binancePayButton" class="btn btn-primary" type="button" disabled>الدفع عبر Binance Pay — قريبًا</button>
+      </div>
     </section>
 
     <section id="adminPanel" class="admin-panel hidden">
