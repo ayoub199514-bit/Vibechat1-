@@ -53,10 +53,27 @@
     </section>
 
     <section id="adminPanel" class="admin-panel hidden">
-      <div class="admin-head"><div><p class="eyebrow">إدارة المنصة</p><h2>لوحة المالك</h2></div><button id="closeAdmin" class="btn btn-ghost">العودة للدردشة</button></div>
-      <div class="stats-grid"><div class="stat-card"><span>إجمالي المستخدمين</span><strong id="userCount">—</strong></div><div class="stat-card"><span>رسائل الدردشة المعروضة</span><strong id="messageCount">—</strong></div></div>
-      <div class="table-wrap"><table><thead><tr><th>المستخدم</th><th>البريد</th><th>UID</th><th>تاريخ الانضمام</th></tr></thead><tbody id="usersTable"><tr><td colspan="4">جارٍ التحميل…</td></tr></tbody></table></div>
-      <p class="muted small">هذه النسخة تعرض بيانات المستخدمين فقط. لا يمكن تعطيل حسابات Firebase Auth من المتصفح؛ يتطلب ذلك خادمًا موثوقًا وصلاحيات Admin SDK.</p>
+      <div class="admin-hero">
+        <div>
+          <p class="eyebrow">VIBECHAT / ADMIN</p>
+          <h2>لوحة تحكم المالك</h2>
+          <p class="muted">إدارة المنصة ومتابعة نشاطها من مكان واحد.</p>
+        </div>
+        <button id="closeAdmin" class="btn btn-ghost" type="button">← العودة للدردشة</button>
+      </div>
+      <div class="admin-welcome">
+        <div class="admin-welcome-icon">✦</div>
+        <div><strong>مرحبًا بك في مركز الإدارة</strong><p class="muted small">هذه اللوحة خاصة بحساب المالك.</p></div>
+        <span class="admin-secure">● وصول محمي</span>
+      </div>
+      <div class="stats-grid admin-stats">
+        <div class="stat-card"><span>إجمالي المستخدمين</span><strong id="userCount">—</strong><small>الحسابات المسجلة في Firestore</small></div>
+        <div class="stat-card"><span>رسائل الدردشة المعروضة</span><strong id="messageCount">—</strong><small>الرسائل المحمّلة حاليًا</small></div>
+        <div class="stat-card"><span>الاشتراكات الشهرية</span><strong>غير مفعّلة</strong><small>تحتاج إعداد الدفع والتحقق الآمن</small></div>
+      </div>
+      <div class="admin-section-title"><div><h3>المستخدمون</h3><p class="muted small">عرض الحسابات المسجلة للمراجعة.</p></div><span class="admin-tag">Firebase Firestore</span></div>
+      <div class="table-wrap"><table><thead><tr><th>المستخدم</th><th>البريد الإلكتروني</th><th>معرّف الحساب UID</th><th>تاريخ الانضمام</th></tr></thead><tbody id="usersTable"><tr><td colspan="4">جارٍ التحميل…</td></tr></tbody></table></div>
+      <div class="admin-notice"><strong>ملاحظة حول صلاحيات الإدارة</strong><p class="muted small">تظهر بيانات المستخدمين هنا. الحظر الفعلي وتعديل الاشتراكات والمدفوعات يتطلبان وظائف خادم وقواعد صلاحيات آمنة؛ لن نعرض أزرارًا توحي بأنها تعمل قبل ربطها فعليًا.</p></div>
     </section>
   </main>
 
