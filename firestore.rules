@@ -1,0 +1,40 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+    // استبدل القيمة بـ UID الخاص بك من Firebase Authentication.
+    function isOwner() {
+      return signedIn() && request.auth.uid == "REPLACE_WITH_OWNER_AUTH_UID";
+    }
+
+    match /users/{userId} {
+      allow read: if signedIn() && (request.auth.uid == userId || isOwner());
+      allow create: if signedIn() && request.auth.uid == userId
+        && request.resource.data.uid == userId
+        && request.resource.data.keys().hasOnly(['uid','displayName','email','createdAt','plan','subscriptionStatus']);
+      allow update: if signedIn() && request.auth.uid == userId
+        && request.resource.data.uid == resource.data.uid
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['displayName']);
+      allow delete: if isOwner();
+    }
+
+    match /messages/{messageId} {
+      allow read: if signedIn();
+      allow create: if signedIn()
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.text is string
+        && request.resource.data.text.size() > 0
+        && request.resource.data.text.size() <= 2000
+        && request.resource.data.keys().hasOnly(['uid','displayName','text','createdAt']);
+      allow update, delete: if isOwner();
+    }
+
+    // بيانات الدفع والاشتراكات الحقيقية لا تُكتب من المتصفح.
+    match /payments/{paymentId} {
+      allow read: if isOwner();
+      allow write: if false;
+    }
+  }
+}

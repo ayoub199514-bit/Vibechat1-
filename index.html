@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <title>VibeChat — دردشتك في مكان واحد</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">V</span><span>VibeChat</span></a>
+    <div class="top-actions"><span id="status" class="status">غير متصل</span><button id="logoutBtn" class="btn btn-ghost hidden">تسجيل الخروج</button></div>
+  </header>
+
+  <main class="shell">
+    <section id="authPanel" class="auth-card">
+      <div class="hero-icon">✦</div>
+      <p class="eyebrow">تواصل بلا حدود</p>
+      <h1 id="authTitle">مرحبًا بك في VibeChat</h1>
+      <p class="muted">أنشئ حسابًا أو سجّل الدخول لبدء الدردشة.</p>
+      <form id="authForm">
+        <label for="displayName" id="nameLabel" class="hidden">اسم العرض</label>
+        <input id="displayName" class="hidden" maxlength="40" placeholder="اسم العرض">
+        <label for="email">البريد الإلكتروني</label>
+        <input id="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+        <label for="password">كلمة المرور</label>
+        <input id="password" type="password" minlength="6" autocomplete="current-password" placeholder="6 أحرف على الأقل" required>
+        <button id="authSubmit" class="btn btn-primary" type="submit">تسجيل الدخول</button>
+      </form>
+      <p id="authError" class="error" role="alert"></p>
+      <button id="toggleAuth" class="link-btn" type="button">ليس لديك حساب؟ أنشئ حسابًا</button>
+    </section>
+
+    <section id="appPanel" class="app-layout hidden">
+      <aside class="sidebar">
+        <div class="profile-mini"><div id="avatar" class="avatar">V</div><div><strong id="currentName">مستخدم</strong><p id="currentEmail" class="muted small"></p></div></div>
+        <div class="side-heading">المحادثات</div>
+        <button class="room active" type="button"><span>🌐</span><span><strong>الدردشة العامة</strong><small>تحدث مع الجميع</small></span></button>
+        <div class="side-note">نصيحة: لا تشارك كلمات المرور أو المعلومات الحساسة في الدردشة العامة.</div>
+        <button id="adminBtn" class="btn btn-ghost hidden" type="button">لوحة الإدارة</button>
+      </aside>
+
+      <section class="chat-panel">
+        <div class="chat-heading"><div><h2>الدردشة العامة</h2><p class="muted small">رسائل مباشرة عبر Firebase</p></div><span class="online-dot">● متصل</span></div>
+        <div id="messages" class="messages"><div class="empty-state">جارٍ تحميل الرسائل…</div></div>
+        <form id="messageForm" class="composer">
+          <input id="messageInput" maxlength="2000" placeholder="اكتب رسالتك هنا…" autocomplete="off" required>
+          <button class="send-btn" type="submit" aria-label="إرسال الرسالة">➤</button>
+        </form>
+        <p id="chatError" class="error chat-error" role="alert"></p>
+      </section>
+    </section>
+
+    <section id="adminPanel" class="admin-panel hidden">
+      <div class="admin-head"><div><p class="eyebrow">إدارة المنصة</p><h2>لوحة المالك</h2></div><button id="closeAdmin" class="btn btn-ghost">العودة للدردشة</button></div>
+      <div class="stats-grid"><div class="stat-card"><span>إجمالي المستخدمين</span><strong id="userCount">—</strong></div><div class="stat-card"><span>رسائل الدردشة المعروضة</span><strong id="messageCount">—</strong></div></div>
+      <div class="table-wrap"><table><thead><tr><th>المستخدم</th><th>البريد</th><th>UID</th><th>تاريخ الانضمام</th></tr></thead><tbody id="usersTable"><tr><td colspan="4">جارٍ التحميل…</td></tr></tbody></table></div>
+      <p class="muted small">هذه النسخة تعرض بيانات المستخدمين فقط. لا يمكن تعطيل حسابات Firebase Auth من المتصفح؛ يتطلب ذلك خادمًا موثوقًا وصلاحيات Admin SDK.</p>
+    </section>
+  </main>
+
+  <footer>VibeChat <span>•</span> نسخة أولية قابلة للتطوير</footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
